@@ -1,0 +1,99 @@
+---
+title: Trends in capture-recapture over the past decade <br> Ecological questions and methodological developments
+author:
+  - name: Olivier Gimenez
+    affil: 1
+  - name: Ruth King
+    affil: 2
+  - name: Rachel McCrea
+    affil: 3
+affiliation:
+  - num: 1
+    address: CNRS, France
+  - num: 2
+    address: The University of Edinburgh, Scotland
+  - num: 3
+    address: University of Kent, England
+column_numbers: 3
+#logoright_name: img/logoUK.jpeg
+#logoleft_name: img/logoCNRS.png
+primary_colour: '#008080'
+output: 
+  posterdown::posterdown_html:
+    self_contained: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# Introduction
+
+Studying wildlife populations is challenging because not all individuals can be captured, identified and monitored exhaustively. Capture-recapture (CR) is a powerful framework to quantify demography and population dynamics of animal and plant populations, while explicitly accounting for the issue of imperfect detection. The past decade has seen an explosion in the developments and applications of CR in statistics, conservation biology, ecology and evolution. We review the scientific CR literature over the 2009-2019 period. We discuss recent ecological applications of CR, and review recent CR methods. Eventually, we suggest future research and model development.
+
+# Methods
+
+To determine the questions and methods relevant to CR, we performed a literature survey in ISI Web of Knowledge by looking for articles corresponding to the following _Topic_ keywords: capture-recapture OR mark-recapture OR capture-mark-recapture. We found 5022 relevant papers over the 2009-2019 period. As an exploratory step, we carried out bibliometric, textual analyses and topic analyses. Check out the [dedicated GitHub repository](https://github.com/oliviergimenez/appendix_capturerecapture_review) for more details about the analyses, including the data and `R` codes. 
+
+# Ecological questions
+
+## What?
+
+In the 80s and 90s, there was a shift in emphasis from **abundance** estimation to **survival** estimation. Things are more balanced nowadays, with a lot of work on both topics. The study of **dispersal** is a big deal, as well as **population growth**, **recruitment** and **stopover duration** in relation to migration; **species richness** is also of interest. The study of **survival** remains the focus of much interest, in particular the consideration of competing risks and estimation of cause-specific mortality rates. 
+
+**Top 10 terms in each topic.**
+
+<center><img src="https://raw.githubusercontent.com/oliviergimenez/oliviergimenez.github.io/master/reviewCRposter/img/topics.png" style="width:90%"></img></center>
+
+<br>
+
+The interpretation is fairly intuitive: topic 1 is about estimating fish survival, 2 is about photo-id, 3 is about modeling and estimation, 4 is disease ecology, 5 is about estimating abundance of marine mammals, 6 is about CR in (human) health sciences, 7 is about the conservation of large carnivores (tigers, leopards), 8 is about growth and recruitment, 9 about prevalence estimation in humans, 10 is about the estimation of individual growth in fish, 11 is about birds (migration and reproduction), and 12 is about habitat perturbations.
+
+## Why?
+
+1. There has been a growing interest in studying the **threats on biodiversity** by determining the impact of climate conditions and change, pollution, poaching, invasive species, habitat loss, deforestation, human infrastructure (road, power lines, wind turbine) or overexploitation (fishing, hunting) on animal demography. 
+
+2. The field of **evolutionary ecology** has resorted to CR to quantify life-history trade-offs and costs, estimate heritability of demographic parameters, describe senescence patterns, quantify individual heterogeneity and assess selection gradients. 
+
+3. The field of **disease ecology** is using CR more and more for estimating prevalence, infection rates, studying transmission or exposure. 
+
+4. How to **manage populations** (conservation, regulation, harvesting, reintroduction) is keeping folks busy, with population abundance and trends used as key indicators.
+
+# Methodological developments
+
+## Marking
+
+**Non-invasive methods** have revolutionalized the field: photo-identification, acoustic, camera-trapping or genetic tagging. This has stimulated a lot of work on **identification issues** including misidentification, incomplete identification, partial identification, non-identification (dna not amplified, allelic dropout), missed matches (in photo-id). 
+
+Photo-identification          |  Genetic tagging
+:-------------------------:|:-------------------------:
+<img src="https://raw.githubusercontent.com/oliviergimenez/oliviergimenez.github.io/master/reviewCRposter/img/photoid.png" style="width:100%"></img>  |  <img src="https://raw.githubusercontent.com/oliviergimenez/oliviergimenez.github.io/master/reviewCRposter/img/geneticid.png" style="width:100%"></img>
+
+## Modeling
+
+1. There has been an uptake of **hidden Markov models (HMM)** (possibly >1st order for memory), and models with **hidden variables** in general; we can deal with complexity and uncertainty, while having great flexibility in the modelling by i) distinguishing what we observe from what is actually going on and ii) decomposing a complex problems in several simpler problems. 
+
+2. **Spatially-explicit models** are a big deal, for closed and open population, in the frequentist and Bayes frameworks, and can help answering many ecological questions. 
+
+3. **Combination of information** makes a lof of sense, i) from different protocols like recaptures, recoveries or telemetry and ii) using a matrix population model at its core to combine individual- and population-level information in **integrated population models**.
+
+4. How to properly deal with **covariates** has generated a lot of work (measurement error, missing data, flexible functional form, covariate selection, collinearity, indirect/direct effects). 
+
+5. Folks devote a lot of energy in the **evaluation of methods** (often via simulations), thinking about assumptions, developing goodness-of-fit procedures.
+
+# Conclusion
+
+1. **Data science** is the new kid on the block. Shall we think of pipelines to build encounter histories? What about outliers? How to visualise the raw data?  
+
+2. **Designing CR protocols** is important, and more work is needed on adaptive sampling, power analyses and providing ecologists with practical tools and recommandations. 
+
+3. **Cross-fertilization with other disciplines** happens between ecology, statistics, social and medical sciences and should be pursued. 
+
+4. A plethora of **software** exist to fit CR models. Kuddos to the developers who invest time in building these tools. 
+
+5. Methods are getting more and more complex, and this should be reflected in the **training of young scientists**. 
+
+
+# Acknowledgments
+
+We analysed the data with the [`bibliometrix`](https://www.bibliometrix.org/), [`stm`](https://www.structuraltopicmodel.com/) and [`tidyverse`](https://www.tidyverse.org/) packages. We did the poster with [`posterdown`](https://github.com/brentthorne/posterdown). A dynamic version of the poster is available [here](https://oliviergimenez.github.io/reviewCRposter/) and a Twitter thread [there](https://twitter.com/oaggimenez/status/1178044240036876289?s=20). The pictures in the Methodological CR developments section are a lynx taken by Fridolin Zimmermann and feces of a brown bear taken by Alexander Kopatz. OG work was partly funded by a grant from CNRS and Mission pour l’interdisciplinarité through its _Osez l’interdisciplinarité_ call and the French National Research Agency (grant ANR-16-CE02-0007).

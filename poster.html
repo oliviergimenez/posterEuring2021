@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<!--
+Font-awesome icons ie github or twitter
+-->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/brands.css" integrity="sha384-n9+6/aSqa9lBidZMRCQHTHKJscPq6NW4pCQBiMmHdUCvPN8ZOg2zJJTkC7WIezWv" crossorigin="anonymous">
+
+<!--
+Google fonts api stuff
+-->
+
+
+
+<title>Trends in capture-recapture over the past decade   Ecological questions and methodological developments</title>
+
+<script src="poster_files/header-attrs-2.7/header-attrs.js"></script>
+<script src="poster_files/accessible-code-block-0.0.1/empty-anchor.js"></script>
+
+
+
+
+<style>
+@page {
+size: 45in 38in;
+margin: 0;
+padding: 0;
+}
+body {
+margin: 0;
+font-size: 45px;
+width: 45in;
+height: 38in;
+padding: 0;
+text-align: justify;
+font-family: Palatino;
+}
+.poster_wrap {
+width: 45in;
+height: 38in;
+padding: 0cm;
+}
+.title_container {
+width: 100%;
+height: 15%;
+overflow: hidden;
+background-color: #008080;
+border: 0 solid #008080
+;
+}
+.logo_left {
+float: left;
+width: 10%;
+height: 100%;
+background-color: #008080;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.logo_right {
+float: right;
+width: 10%;
+height: 100%;
+background-color: #008080;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.poster_title {
+text-align: center;
+position: relative;
+float: left;
+width: 80%;
+height: 100%;
+color: #FFFFFF;
+top: 50%;
+transform: translateY(-50%);
+-webkit-transform: translateY(-50%);
+}
+#title {
+font-family: Palatino;
+}
+/* unvisited link */
+a:link {
+color: #008080;
+text-decoration: none;
+}
+.mybreak {
+  break-before: column;
+}
+/* visited link */
+a:visited {
+color: #008080;
+text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+color: #008080;
+text-decoration: none;
+}
+
+/* selected link */
+a:active {
+color: #008080;
+text-decoration: none;
+}
+.poster_body {
+-webkit-column-count: 3; /* Chrome, Safari, Opera */
+-moz-column-count: 3; /* Firefox */
+column-count: 3;
+-webkit-column-fill: auto;
+-moz-column-fill: auto;
+column-fill: auto;
+-webkit-column-rule-width: 1mm;
+-moz-column-rule-width: 1mm;
+column-rule-width: 1mm;
+-webkit-column-rule-style: dashed;
+-moz-column-rule-style: dashed;
+column-rule-style: dashed;
+-webkit-column-rule-color: #008080;
+-moz-column-rule-color: #008080;
+column-rule-color: #008080;
+column-gap: 1em;
+padding-left: 0.5em;
+padding-right: 0.5em;
+height: 100%;
+color: #000000
+background-color: #ffffff;
+}
+.poster_title h1 {
+font-size: 75pt;
+margin: 0;
+border: 0;
+font-weight: normal;
+}
+.poster_body_wrap{
+width: 45in;
+height: calc(100% - 17%);
+padding-top: calc(38in * 0.01);
+padding-bottom: calc(38in * 0.01);
+background-color: #ffffff;
+}
+.poster_title h3 {
+color: #ffffff;
+font-size: 50pt;
+margin: 0;
+border: 0;
+font-weight: normal;
+}
+.poster_title h3 > sup {
+  font-size: 35pt;
+  margin-left: 0.02em;
+}
+.poster_title h5 {
+color: #FFFFFF;
+font-size: 35pt;
+margin: 0;
+border: 0;
+font-weight: normal;
+}
+img {
+margin-top: 0;
+margin-bottom: 0;
+}
+.section {
+  padding: 0.2em;
+}
+.poster_body h1 {
+text-align: center;
+color: #FFFFFF;
+font-size: 65pt;
+border: 2mm solid #008080;
+background-color: #008080;
+border-radius: 4mm 0mm;
+margin-top: 2mm;
+margin-bottom: 2mm;
+font-weight: normal;
+}
+.poster_body h2 {
+color: #000000;
+font-size: 40pt;
+padding-left: 4mm;
+font-weight: normal;
+}
+.span {
+width: 200%;
+}
+/* center align leaflet map,
+from https://stackoverflow.com/questions/52112119/center-leaflet-in-a-rmarkdown-document */
+.html-widget {
+margin: auto;
+position: sticky;
+margin-top: 2cm;
+margin-bottom: 2cm;
+}
+.leaflet.html-widget.html-widget-static-bound.leaflet-container.leaflet-touch.leaflet-fade-anim.leaflet-grab.leaflet-touch-drag.leaflet-touch-zoom {
+position: sticky;
+width: 100%;
+}
+pre.sourceCode.r, pre.sourceCode.python {
+background-color: #ffffff20;
+border: solid #008080 1mm;
+border-radius: 0.5em;
+padding: 4mm;
+margin: auto;
+margin-top: 1em;
+margin-bottom: 1em;
+/* align-items: center; */
+}
+div.sourceCode {
+background-color: transparent;
+width: 85%;
+margin-left: auto;
+margin-right: auto;
+}
+code.sourceCode.r, code.sourceCode.python {
+background-color: transparent;
+font-size: 20pt;
+border-radius: 2mm;
+}
+code {
+font-size: 25pt;
+font-family: monospace;
+background-color: #00808024;
+color: #008080;
+padding: 1.2mm;
+line-height: 1;
+border-radius: 2mm;
+}
+.caption {
+font-size: 20pt;
+}
+.table caption {
+font-size: 20pt;
+padding-bottom: 3mm;
+
+}
+code {
+font-size: 1em;
+font-family: monospace;
+background-color: #00808024;
+color: #008080;
+padding: 1.2mm;
+border-radius: 2mm;
+}
+.poster_title code {
+font-size: 1em;
+}
+table {
+font-size: 40px;
+margin: auto;
+border-top: 3px solid #666;
+border-bottom: 3px solid #666;
+}
+table thead th {
+border-bottom: 3px solid #ddd;
+}
+td {
+padding: 8px;
+}
+th {
+padding: 15px;
+}
+caption {
+margin-bottom: 10px;
+}
+.poster_body p {
+margin-right: 4mm;
+margin-left: 4mm;
+margin-top: 6mm;
+margin-bottom: 10mm;
+color: #000000
+}
+.poster_body ol {
+margin-right: 4mm;
+margin-left: 4mm;
+}
+#ul {
+margin-right: 4mm;
+margin-left: 4mm;
+}
+.references p {
+font-size: 20pt;
+}
+.orcid img {
+  width: 1em;
+}
+</style>
+</head>
+<body>
+
+
+<div class="poster_wrap">
+<div class="title_container">
+<!-- Left Logo  -->
+<div class="logo_left">
+</div>
+<!-- Poster Title -->
+<div class= "poster_title">
+<h1 id="title">Trends in capture-recapture over the past decade <br> Ecological questions and methodological developments</h1>
+<h3 id="author">Olivier Gimenez<sup>1</sup>, Ruth King<sup>2</sup>, Rachel McCrea<sup>3</sup></h3>
+<h5 id="affiliation"><sup>1</sup> CNRS, France; <sup>2</sup> The University of Edinburgh, Scotland; <sup>3</sup> University of Kent, England</h5>
+</div>
+<!-- Right Logo  -->
+<div class="logo_right">
+</div>
+</div>
+
+<div class='poster_body_wrap'>
+<div class='poster_body'>
+<div id="introduction" class="section level1">
+<h1>Introduction</h1>
+<p>Studying wildlife populations is challenging because not all individuals can be captured, identified and monitored exhaustively. Capture-recapture (CR) is a powerful framework to quantify demography and population dynamics of animal and plant populations, while explicitly accounting for the issue of imperfect detection. The past decade has seen an explosion in the developments and applications of CR in statistics, conservation biology, ecology and evolution. We review the scientific CR literature over the 2009-2019 period. We discuss recent ecological applications of CR, and review recent CR methods. Eventually, we suggest future research and model development.</p>
+</div>
+<div id="methods" class="section level1">
+<h1>Methods</h1>
+<p>To determine the questions and methods relevant to CR, we performed a literature survey in ISI Web of Knowledge by looking for articles corresponding to the following <em>Topic</em> keywords: capture-recapture OR mark-recapture OR capture-mark-recapture. We found 5022 relevant papers over the 2009-2019 period. As an exploratory step, we carried out bibliometric, textual analyses and topic analyses. Check out the <a href="https://github.com/oliviergimenez/appendix_capturerecapture_review">dedicated GitHub repository</a> for more details about the analyses, including the data and <code>R</code> codes.</p>
+</div>
+<div id="ecological-questions" class="section level1">
+<h1>Ecological questions</h1>
+<div id="what" class="section level2">
+<h2>What?</h2>
+<p>In the 80s and 90s, there was a shift in emphasis from <strong>abundance</strong> estimation to <strong>survival</strong> estimation. Things are more balanced nowadays, with a lot of work on both topics. The study of <strong>dispersal</strong> is a big deal, as well as <strong>population growth</strong>, <strong>recruitment</strong> and <strong>stopover duration</strong> in relation to migration; <strong>species richness</strong> is also of interest. The study of <strong>survival</strong> remains the focus of much interest, in particular the consideration of competing risks and estimation of cause-specific mortality rates.</p>
+<p><strong>Top 10 terms in each topic.</strong></p>
+<center>
+<img src="https://raw.githubusercontent.com/oliviergimenez/oliviergimenez.github.io/master/reviewCRposter/img/topics.png" style="width:90%"></img>
+</center>
+<p><br></p>
+<p>The interpretation is fairly intuitive: topic 1 is about estimating fish survival, 2 is about photo-id, 3 is about modeling and estimation, 4 is disease ecology, 5 is about estimating abundance of marine mammals, 6 is about CR in (human) health sciences, 7 is about the conservation of large carnivores (tigers, leopards), 8 is about growth and recruitment, 9 about prevalence estimation in humans, 10 is about the estimation of individual growth in fish, 11 is about birds (migration and reproduction), and 12 is about habitat perturbations.</p>
+</div>
+<div id="why" class="section level2">
+<h2>Why?</h2>
+<ol style="list-style-type: decimal">
+<li><p>There has been a growing interest in studying the <strong>threats on biodiversity</strong> by determining the impact of climate conditions and change, pollution, poaching, invasive species, habitat loss, deforestation, human infrastructure (road, power lines, wind turbine) or overexploitation (fishing, hunting) on animal demography.</p></li>
+<li><p>The field of <strong>evolutionary ecology</strong> has resorted to CR to quantify life-history trade-offs and costs, estimate heritability of demographic parameters, describe senescence patterns, quantify individual heterogeneity and assess selection gradients.</p></li>
+<li><p>The field of <strong>disease ecology</strong> is using CR more and more for estimating prevalence, infection rates, studying transmission or exposure.</p></li>
+<li><p>How to <strong>manage populations</strong> (conservation, regulation, harvesting, reintroduction) is keeping folks busy, with population abundance and trends used as key indicators.</p></li>
+</ol>
+</div>
+</div>
+<div id="methodological-developments" class="section level1">
+<h1>Methodological developments</h1>
+<div id="marking" class="section level2">
+<h2>Marking</h2>
+<p><strong>Non-invasive methods</strong> have revolutionalized the field: photo-identification, acoustic, camera-trapping or genetic tagging. This has stimulated a lot of work on <strong>identification issues</strong> including misidentification, incomplete identification, partial identification, non-identification (dna not amplified, allelic dropout), missed matches (in photo-id).</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Photo-identification</th>
+<th align="center">Genetic tagging</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><img src="https://raw.githubusercontent.com/oliviergimenez/oliviergimenez.github.io/master/reviewCRposter/img/photoid.png" style="width:100%"></img></td>
+<td align="center"><img src="https://raw.githubusercontent.com/oliviergimenez/oliviergimenez.github.io/master/reviewCRposter/img/geneticid.png" style="width:100%"></img></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="modeling" class="section level2">
+<h2>Modeling</h2>
+<ol style="list-style-type: decimal">
+<li><p>There has been an uptake of <strong>hidden Markov models (HMM)</strong> (possibly &gt;1st order for memory), and models with <strong>hidden variables</strong> in general; we can deal with complexity and uncertainty, while having great flexibility in the modelling by i) distinguishing what we observe from what is actually going on and ii) decomposing a complex problems in several simpler problems.</p></li>
+<li><p><strong>Spatially-explicit models</strong> are a big deal, for closed and open population, in the frequentist and Bayes frameworks, and can help answering many ecological questions.</p></li>
+<li><p><strong>Combination of information</strong> makes a lof of sense, i) from different protocols like recaptures, recoveries or telemetry and ii) using a matrix population model at its core to combine individual- and population-level information in <strong>integrated population models</strong>.</p></li>
+<li><p>How to properly deal with <strong>covariates</strong> has generated a lot of work (measurement error, missing data, flexible functional form, covariate selection, collinearity, indirect/direct effects).</p></li>
+<li><p>Folks devote a lot of energy in the <strong>evaluation of methods</strong> (often via simulations), thinking about assumptions, developing goodness-of-fit procedures.</p></li>
+</ol>
+</div>
+</div>
+<div id="conclusion" class="section level1">
+<h1>Conclusion</h1>
+<ol style="list-style-type: decimal">
+<li><p><strong>Data science</strong> is the new kid on the block. Shall we think of pipelines to build encounter histories? What about outliers? How to visualise the raw data?</p></li>
+<li><p><strong>Designing CR protocols</strong> is important, and more work is needed on adaptive sampling, power analyses and providing ecologists with practical tools and recommandations.</p></li>
+<li><p><strong>Cross-fertilization with other disciplines</strong> happens between ecology, statistics, social and medical sciences and should be pursued.</p></li>
+<li><p>A plethora of <strong>software</strong> exist to fit CR models. Kuddos to the developers who invest time in building these tools.</p></li>
+<li><p>Methods are getting more and more complex, and this should be reflected in the <strong>training of young scientists</strong>.</p></li>
+</ol>
+</div>
+<div id="acknowledgments" class="section level1">
+<h1>Acknowledgments</h1>
+<p>We analysed the data with the <a href="https://www.bibliometrix.org/"><code>bibliometrix</code></a>, <a href="https://www.structuraltopicmodel.com/"><code>stm</code></a> and <a href="https://www.tidyverse.org/"><code>tidyverse</code></a> packages. We did the poster with <a href="https://github.com/brentthorne/posterdown"><code>posterdown</code></a>. A dynamic version of the poster is available <a href="https://oliviergimenez.github.io/reviewCRposter/">here</a> and a Twitter thread <a href="https://twitter.com/oaggimenez/status/1178044240036876289?s=20">there</a>. The pictures in the Methodological CR developments section are a lynx taken by Fridolin Zimmermann and feces of a brown bear taken by Alexander Kopatz. OG work was partly funded by a grant from CNRS and Mission pour l’interdisciplinarité through its <em>Osez l’interdisciplinarité</em> call and the French National Research Agency (grant ANR-16-CE02-0007).</p>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+</body>
+</html>
